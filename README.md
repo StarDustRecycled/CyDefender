@@ -1,6 +1,6 @@
-# cyber-safari
+# CyDefender
 
-![cyber-safari](./images/cybersafari.png)
+![CyDefender](./images/CyDefender.png)
 
 ## High Level Overview
 
