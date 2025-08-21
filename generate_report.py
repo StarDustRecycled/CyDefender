@@ -24,7 +24,7 @@ def main():
     
     # Check if we have any data to report
     if not report_manager.vulnerabilities and not report_manager.defense_actions:
-        print("⚠️ No security data found. Run the hack_agent and/or defense_agent first.")
+        print("⚠️ No security data found. Run the offense_agent and/or defense_agent first.")
         return
     
     print(f"📊 Found {len(report_manager.vulnerabilities)} vulnerabilities")

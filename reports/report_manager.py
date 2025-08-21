@@ -42,7 +42,7 @@ class SecurityEvent:
     event_type: str  # 'attack', 'defense', 'detection'
     description: str
     severity: str
-    source: str  # 'hack_agent', 'defense_agent', 'log_analysis'
+    source: str  # 'offense_agent', 'defense_agent', 'log_analysis'
 
 
 class SecurityReportManager:
@@ -86,7 +86,7 @@ class SecurityReportManager:
             event_type="attack",
             description=f"Vulnerability discovered: {vuln.vulnerability_type} in {vuln.endpoint}",
             severity=vuln.severity,
-            source="hack_agent"
+            source="offense_agent"
         )
         
         # Auto-save session

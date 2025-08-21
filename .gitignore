@@ -76,3 +76,26 @@ reports/*.json
 # Backup files
 *.backup
 *.bak
+
+# Document files
+*.pdf
+*.docx
+*.doc
+*.md
+*.markdown
+
+# Document folders
+docs/
+documentation/
+
+# Thesis and report files
+Chapter_*.docx
+*_Report_*.docx
+*_Draft.docx
+*_Final.docx
+*_TODO.md
+*_Notes.md
+
+# MS Office temp files
+~$*
+*.tmp

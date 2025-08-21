@@ -58,7 +58,7 @@ Notice that they show up in the `app_logs/app.log` file.
 ## Running the Offensive Agent
 
 ```
-python -m agents.hack_agent
+python -m agents.offense_agent
 ```
 This will start the offensive agent that will try to exploit the vulnerabilities in the test server following the below steps:
 

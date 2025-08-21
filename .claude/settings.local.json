@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "mcp__word-document-server__get_document_text",
+      "mcp__word-document-server__create_document",
+      "mcp__word-document-server__add_heading",
+      "mcp__word-document-server__add_paragraph",
+      "mcp__word-document-server__add_page_break",
+      "mcp__filesystem__read_multiple_files",
+      "mcp__word-document-server__add_table"
     ],
     "deny": []
   }

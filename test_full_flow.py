@@ -17,7 +17,7 @@ def test_complete_flow():
     print("TESTING COMPLETE CYDEFENDER FLOW")
     print("=" * 60)
     
-    # Step 1: Create sample attack logs (simulating what hack_agent creates)
+    # Step 1: Create sample attack logs (simulating what offense_agent creates)
     sample_logs = """
 2024-01-15 10:30:45 - INFO - 192.168.1.100 - GET /api/v1/profile - 200
 2024-01-15 10:31:12 - INFO - 192.168.1.100 - POST /api/v1/login - 200
@@ -122,7 +122,7 @@ def show_flow_diagram():
        |
     [Logs requests to app_logs/app.log]
     
-    2. HACK AGENT (hack_agent.py)
+    2. OFFENSE AGENT (offense_agent.py)
        |
     [Analyzes JavaScript for vulnerabilities]
        |
