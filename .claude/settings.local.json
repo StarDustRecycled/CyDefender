@@ -8,7 +8,8 @@
       "mcp__word-document-server__add_paragraph",
       "mcp__word-document-server__add_page_break",
       "mcp__filesystem__read_multiple_files",
-      "mcp__word-document-server__add_table"
+      "mcp__word-document-server__add_table",
+      "mcp__gpt-codex__codex"
     ],
     "deny": []
   }

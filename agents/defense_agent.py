@@ -3,7 +3,7 @@ from langchain_core.messages import HumanMessage
 from langchain_anthropic import ChatAnthropic
 from langgraph.prebuilt import create_react_agent
 from tools.defense_tools import analyze_logs, identify_security_controls, generate_recommendations
-from tools.common import log_progress
+from tools.common import log_progress, sanitize_log
 from config import get_model_config, get_security_config
 from reports.report_manager import report_manager
 
@@ -122,7 +122,17 @@ def main(log_content: str):
 if __name__ == "__main__":
     # Read logs from the test lab
     with open("app_logs/app.log", "r") as f:  # Updated path to account for new location
-        security_logs = f.read()
-        
+        raw_logs = f.read()
+    
+    # Apply prompt injection firewall before LLM processing
+    sanitized = sanitize_log(raw_logs)
+    if not sanitized["safe"]:
+        log_progress(f"⚠️  Detected {len(sanitized['pi_flags'])} prompt injection patterns", "🛡️")
+        for flag in sanitized["pi_flags"]:
+            log_progress(f"Flagged pattern: {flag}", "🚩")
+    
+    # Use sanitized logs for analysis
+    security_logs = sanitized["text"]
+    
     # Run defensive analysis
     result = main(security_logs) 
